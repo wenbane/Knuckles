@@ -42,7 +42,9 @@ function App() {
           nonEmptyColIdxes[Math.floor(Math.random() * nonEmptyColIdxes.length)];
         setIntervalX(() => setCurrentDraw(roll()), 100, 6);
         setTimeout(() => {
-          addToBoard(randomColIdx);
+          if (randomColIdx != null) {
+            addToBoard(randomColIdx);
+          }
           setCanAddToBoard(false);
           setTurn();
         }, 1500);
